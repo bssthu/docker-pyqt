@@ -4,7 +4,7 @@ MAINTAINER bssthu
 
 # Install Deps
 RUN apt-get update -y -qq && \
-    apt-get install -y python3-dev qt5-default && \
+    apt-get install -y curl tar python3-dev qt5-default && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
