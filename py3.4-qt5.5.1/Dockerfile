@@ -4,7 +4,7 @@ MAINTAINER bssthu
 
 # Install Deps
 RUN apt-get update -y -qq && \
-    apt-get install -y curl tar python3-dev qt5-default && \
+    apt-get install -y python3-dev qt5-default && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -23,7 +23,7 @@ RUN mkdir -p /opt/sip && \
 # Install PyQt5
 RUN mkdir -p /opt/pyqt && \
     cd /opt/pyqt && \
-    curl -L -o pyqt5.tar.gz http://sourceforge.net/projects/pyqt/files/PyQt5/PyQt-5.5.1/PyQt-gpl-5.5.1.tar.gz
+    curl -L -o pyqt5.tar.gz http://sourceforge.net/projects/pyqt/files/PyQt5/PyQt-5.5.1/PyQt-gpl-5.5.1.tar.gz && \
     tar -xf pyqt5.tar.gz && \
     cd /opt/pyqt/PyQt* && \
     python configure.py -c --confirm-license --no-designer-plugin -e QtCore -e QtGui -e QtWidgets && \
